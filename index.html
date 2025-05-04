@@ -1,187 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   
-    <h1 style="background-color: #f00; text-align: center;">ALARMAS MAPFRE</h1>
-    
-
-
-    
-    <style>
-         .contenedor {
-      width: 300px;
-      height: 200px;
-      position: relative;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Alarmas 24 horas - MAPFRE</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✔";
+      color: green;
+      margin-right: 8px;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .benefit {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .video-container {
       display: flex;
       justify-content: center;
-      align-items: center; /* Centrar verticalmente el contenido */
-      border: 1px solid black; /* Solo para visualizar el contenedor */
+      align-items: center;
+      margin: 50px 0;
     }
-    .imagen {
-      width: 150%;
-      height: 100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      object-fit: cover; /* Ajustar la imagen al contenedor */
+    iframe {
+      width: 800px;
+      height: 450px;
+      border: none;
     }
-    .texto {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: rgb(44, 40, 40); /* Color de texto para contraste */
-      font-size: 15px;
-      
+    .section1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 400px;
+      position: relative;
+      margin-bottom: 60px;
     }
-    .texto2{
-        position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      color: rgb(22, 21, 21); /* Color de texto para contraste */
-      font-size: 12px;
+    .section1 .left, .section1 .right {
+      width: 45%;
+      padding: 40px;
+      box-sizing: border-box;
+      position: relative;
     }
+    .section1 .left {
+      background-color: #1a1a1a;
+      color: white;
+      margin-right: -50px;
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+    }
+    .section1 .right {
+      background-color: #d8210f;
+      color: white;
+      margin-left: -50px;
+      z-index: 2;
+      clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+    }
+    .section1 .left .text, .section1 .right .text {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .section1 .left .text h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .section1 .right .text p {
+      margin-bottom: 20px;
+    }
+    .section1 .right .text button {
+      margin: 10px 0;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .white {
+      background-color: white;
+      color: #d8210f;
+    }
+    .red {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+    .footer {
+      background-color: #f3f3f3;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .articles, .faq {
+      margin: 40px 0;
+    }
+    .articles h2, .faq h2 {
+      margin-bottom: 20px;
+    }
+    .article-item {
+      display: inline-block;
+      width: 30%;
+      margin: 1%;
+      vertical-align: top;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .article-item img {
+      width: 100%;
+      height: auto;
+    }
+    .faq-item {
+      background: #eee;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section1">
+    <div class="left">
+      <div class="text">
+        <h1>Smart Alarmas 24 horas</h1>
+        <p>En MAPFRE Perú nos preocupamos por la seguridad de tu hogar y tu bienestar, brindando los productos que necesitas.</p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="text">
+        <p>Gracias a nuestras alarmas para casa Mapfre, podrás disfrutar de tus actividades diarias o de un descanso tranquilo por las noches, sin preocuparte de más.</p>
+        <button class="white">Ingresa tus datos aquí</button>
+        <button class="red">Pídelo por WhatsApp</button>
+      </div>
+    </div>
+  </div>
 
-    </style>
+  <div class="video-container">
     
-    
-    <div class="contenedor">
-      <img class="imagen" src="https://yober3.github.io/parrafo/index.html.png" alt="Imagen">
-      <div class="texto">Smart Alarmas 24 horas.</div>
-      <div class="texto2">En MAPFRE Perú nos preocupamos por la seguridad de tu hogar y tu bienestar, brindando los productos que necesitas.</div>
-      
-    </style>
-    
-
-
-    </div> 
-
     <iframe src="https://www.youtube.com/embed/CMcmItjh3P8?si=3iWZXM5Gg-sVyoV8"
         width="100%"
         height="100%"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
-
-
-
     
-  <h1>Smart Alarmas 24 horas</h1>
-  <p>Smart Alarmas 24 horas, es un producto el cual combina de forma integral el sistema más tecnológico de alarmas con el respaldo de un seguro de hogar.
-    A continuación conoce los elementos de MAPFRE SMART 24 HORAS</p>
+    
+     
+    </iframe>
+  </div>
+
+  <div class="container">
+    <h2>Smart Alarmas 24 horas</h2>
+    <p>Smart Alarmas 24 horas, es un producto el cual combina de forma integral el sistema más tecnológico de alarmas con el respaldo de un seguro de hogar. A continuación conoce los elementos de MAPFRE SMART 24 HORAS</p>
     <ul>
-        <li>Kit de Alarmas con tecnología Smart</li>
-        <li>Servicio de Monitoreo</li>
-        <li>APP móvil</li>
-        <li>Fuerza de Supervisión</li>
-        <li>Seguro de Hogar</li>
-        <li>sistencias (domiciliarias y médicas)</li>
+      <li>Kit de Alarmas con tecnología Smart</li>
+      <li>Servicio de Monitoreo</li>
+      <li>APP móvil</li>
+      <li>Fuerza de Supervisión</li>
+      <li>Seguro de Hogar</li>
+      <li>Asistencias (domiciliarias y médicas)</li>
     </ul>
-    <h1>A quién va dirigido</h1>
+
+    <h2>A quién va dirigido</h2>
     <p>MAPFRE SMART 24 Horas va dirigido a los amantes de la seguridad, familias que deseen tener el control de su hogar desde la palma de su mano.</p>
-    <p>--</p>
-    <h1>Coberturas </h1>
-    <div class="fila">
-        <div class="columna">
-            
-            <b style="font-weight: bold;">Incendio, vandalismo </b></p> 
-          <p>Edificación S/. 60.000</p>
-          <p>Contenido S/. 15.000</p>
-          <b style="font-weight: bold;">Muerte Accidental</b></p> 
-          <p>Asegurado y Cónyuge S/. 5.000</p>
-        </div>
-        <div class="columna">
-            <b style="font-weight: bold;">Robo</b></p> 
-            <p>Contenido S/. 15.000</p>
-            <b style="font-weight: bold;">Deducibles</b></p> 
-            
-          <p>Incendio, lluvia y/o inundación: S/. 1,600</p>
-          <p>Huelgas, conmoción civil, daño malicioso, vandalismo y terrorismo: 1% del valor declarado, mínimo S/.640</p>
-          <p>Robo y/o hurto agravado: 10% del monto indemnizable, mínimo S/. 1,600</p>
-        </div>
+
+    <h2>Coberturas</h2>
+    <ul>
+      <li><strong>Incendio, vandalismo</strong>
+        <ul>
+          <li>Edificación S/. 60.000</li>
+          <li>Contenido S/. 15.000</li>
+        </ul>
+      </li>
+      <li><strong>Robo</strong>
+        <ul>
+          <li>Contenido S/. 15.000</li>
+        </ul>
+      </li>
+      <li><strong>Muerte Accidental</strong>
+        <ul>
+          <li>Asegurado y Cónyuge S/. 5.000</li>
+        </ul>
+      </li>
+      <li><strong>Deducibles</strong>
+        <ul>
+          <li>Incendio, lluvia y/o inundación: S/. 1.600</li>
+          <li>Huelgas, conmoción civil, daño malicioso, vandalismo y terrorismo: 1% del valor declarado, mínimo S/. 640</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Beneficios y ventajas</h2>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <h3>El Kit de alarmas más ventajoso</h3>
+        <ul>
+          <li>Panel de alarmas: Permite programar, activar y desactivar tu alarma desde su pantalla táctil...</li>
+        </ul>
       </div>
-      <style>
-      .fila {
-        display: flex;
-        flex-direction: row;
-      }
-      
-      .columna {
-        width: 50%;
-      }
-    </style>
-    <h1>Exclusiones </h1>
-    <p>Las pólizas no amparan los daños, las pérdidas o los perjuicios que sean consecuencia directa o indirecta de:</p>
+    </div>
+
+    <h2>Condicionados</h2>
     <ul>
-        <li>Dolo o culpa grave del asegurado</li>
-        <li>Fuego subterráneo, vibraciones normales del suelo o subsuelo.</li>
-        <li>Suspensión o corte de servicios públicas</li>
-        <li>Guerra, empleos de armas nucleares o a consecuencia de contaminación radioactiva</li>
-        <li>Actos ejecutados por la autoridad, salvo a aquellos para contrarrestar el siniestro o evitar su extensión.</li>
-        <li>Lucro Cesante</li>
-        <li>Virus, errores de definición, de digitación, mal funcionamiento que afecten los equipos de cómputo.</li>
-
-        
+      <li><a href="#">Condiciones Generales PDF (669 KB)</a></li>
+      <li><a href="#">Condiciones de Producto Smart Alarmas 24 horas PDF (424 KB)</a></li>
     </ul>
-    <p>Para mayor información y/o detalle de las exclusiones, revisar el articulo 3° del Condicionado.</p>
 
-        <h1>Condicionados</h1>
-        <p>--</p>
-        <a href="Condiciones Generales  PDF (169 KB)"></a>
-        
-        <a href="Condiciones de Producto Smart Alarmas 24 horas PDF (424 KB)">Condiciones de Producto Smart Alarmas 24 horas PDF (424 KB)</a>
-   <h1>En caso de siniestro</h1>
-   <p>--</p>
-   <p>Procedimiento, plazo y canal para presentar la solicitud de cobertura y documentación que debe adjuntarse</p>
+    <h2>En caso de siniestro</h2>
+    <p><strong>Procedimiento, plazo y canal para presentar la solicitud de cobertura y documentación que debe adjuntarse</strong></p>
+    <p>Comunicarse de inmediato con nuestro servicio de Atención al Cliente 5124 Horas al teléfono 213 -3333 (Lima)...</p>
 
-   <p>Comunicarse de inmediato con nuestro servicio de Atención al Cliente SI24 Horas al teléfono 213-3333 (Lima). El asegurado o contratante deberán regularizar dicho aviso dentro de los 3 (tres) días naturales siguientes, mediante declaración escrita y veraz, debiendo presentar copia certificada de la denuncia policial correspondiente.</p>
-    <h1>Más información</h1>
-    <p>--</p>
+    <h2>Más información</h2>
     <p>Coberturas principales del seguro de hogar:</p>
-
-    <p>Sujeto a todos los términos y condiciones que forman parte de la presente Póliza y hasta por el correspondiente límite de Suma Asegurada contratada que figura en las Condiciones Particulares, la compañía cubre:</p>
     <ul>
-        <li>SECCIÓN PRIMERA: Incendio y Líneas Aliadas</li>
-        <li>SECCIÓN SEGUNDA: Robo</li>
-        <li>SECCIÓN TERCERA: Muerte del asegurado y/o cónyuge</li>
+      <li>SECCIÓN PRIMERA: Incendio y Líneas Aliadas</li>
+      <li>SECCIÓN SEGUNDA: Robo</li>
+      <li>SECCIÓN TERCERA: Muerte del asegurado y/o cónyuge</li>
     </ul>
-     <b style="font-weight: bold;">DERECHO DE ARREPENTIMIENTO</b></p>
-     <p>Según lo establecido en el numeral 8.1 del Articulo N°8, 9.1, 9.2 y 9.3 del Articulo N°9 de las Clausulas Generales de Contratación.</p>
-     <b style="font-weight: bold;">CODIGO DE IDENTIFICACION </b></p>
-     <p>Registro SBS: RG0715700151</p>
-     <h1>Formas de pago</h1>
-     <p>Conoce todas nuestras formas de pago disponibles.</p>
-     <a href="Condiciones Generales  PDF (169 KB)">Ver formas de pago</a>
-     <h1>Preguntas Frecuentes</h1>
-     <p>--</p>
-     <details>
-        <summary><b>Pregunta:</b>¿Cómo funciona una alarma para casa?</summary>
-        <p><b>Respuesta:</b> El precio del seguro de moto lineal varía en función de los siguientes factores:
+    <p><strong>DERECHO DE ARREPENTIMIENTO</strong><br>
+    Según lo establecido en el numeral 8.1 del Artículo N°8, 9.1 y 9.3 del Artículo N°9 de las Cláusulas Generales de Contratación.</p>
 
-            Monitoreamos tu casa las 24 horas los 7 días de la semana
-            Podrás acceder a las cámaras desde tu celular, pc o laptop, vayas donde vayas.
-            Se tienen sensores de movimiento que disparan la alarma
-            Contamos con personal especializado para reaccionar ante algún incidente o intento de robo.</p>
-      </details>
-      <details>
-        <summary><b>Pregunta:</b>¿Cómo instalar un sistema de alarmas en casa?</summary>
-        <p><b>Respuesta:</b>Con Alarmas Smart 24 horas de Mapfre, no tendrás que preocuparte por la instalación, nosotros instalamos el sistema de alarmas el cual podrás administrar desde un panel de control, además tendrás una placa disuasiva en la puerta de tu casa.</p>
-      </details>
-      <details>
-        <summary><b>Pregunta:</b>¿Qué coberturas tiene Alarmas Smart de MAPFRE?</summary>
-        <p><b>Respuesta:</b>Tu sistema de alarmas Smart de Mapfre brinda una cobertura a tu hogar por incendio, vandalismo, robo, gasfitería, vidriería, entre otras coberturas. Además, contarás con asistencia gratuita en viajes, salud, autos y hogar.</p>
-      </details>
-      <h1 style="background-color: #f00;">Producto comerzializado por: MAPFRE Perú</h1>
+    <p><strong>CÓDIGO DE IDENTIFICACIÓN</strong><br>
+    Registro SBS: RG107150001</p>
+
+    <h2>Formas de pago</h2>
+    <button>Ver formas de pago</button>
+  </div>
+
+  <div class="container">
+    <div class="articles">
+      <h2>Artículos</h2>
+      <div class="article-item">
+        <img src="https://www.mapfre.com.pe/media/regreso-a-clases-movilidad-escolar-segura-545x257-1.jpg" alt="Regreso a clases">
+        <p><strong>Regreso a clases: ¡Movilidad escolar segura!</strong><br>01/03/2025 • 3 min</p>
+        <p>A pocos días del inicio del año escolar, una de las preocupaciones más comunes es la seguridad de los hijos en el transporte escolar.</p>
+      </div>
+      <div class="article-item">
+        <img src="https://www.mapfre.com.pe/media/mapfre-cuidado-mascota-playa-verano-seguro-poliza-1080x550.jpg" alt="Perro en playa">
+        <p><strong>Consejos para llevar a tu perro a la playa</strong><br>19/02/2025 • 6 min</p>
+        <p>Sigue las recomendaciones de un especialista para cuidar la salud de tu mascota durante el verano.</p>
+      </div>
+      <div class="article-item">
+        <img src="https://www.mapfre.com.pe/media/actividades-ninos-verano-mapfre-casa-familia-1080x550.jpg" alt="Niños en verano">
+        <p><strong>Actividades para niños en verano</strong><br>10/02/2025 • 4 min</p>
+        <p>El verano es la temporada perfecta para que los niños se diviertan y aprendan cosas nuevas fuera del aula.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-item">¿Cómo funciona una alarma para casa?</div>
+      <div class="faq-item">¿Cómo instalar un sistema de alarmas en casa?</div>
+      <div class="faq-item">¿Qué coberturas tiene Alarmas Smart de MAPFRE?</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><span class="rojo">Producto comerzializado por: MAPFRE Perú</span></p>
+  <style>
+  
+span {
+  background-color: red;
+}
+ </style>
+
+ <p>(autor) YOBER HUARACA ROJAS</p>
+  </div>
 </body>
-    </html>
-    
-    
-    
-    
+</html>
